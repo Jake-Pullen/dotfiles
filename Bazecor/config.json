@@ -1,0 +1,63 @@
+{
+	"settings": {
+		"backupFolder": "/home/devin/Dygma/Backups",
+		"backupFrequency": 12,
+		"language": "en-GB",
+		"darkMode": "dark",
+		"hideBluetoothExperimental": false,
+		"showDefaults": false,
+		"verbose": false,
+		"allowBeta": true,
+		"version": "1.7.0"
+	},
+	"neurons": [
+		{
+			"id": "d16ae0eed742ea82",
+			"name": "Defy",
+			"layers": [
+				{
+					"id": 0,
+					"name": "L1"
+				},
+				{
+					"id": 1,
+					"name": "L2"
+				},
+				{
+					"id": 2,
+					"name": "L3"
+				},
+				{
+					"id": 3,
+					"name": "L4"
+				},
+				{
+					"id": 4,
+					"name": "L5"
+				},
+				{
+					"id": 5,
+					"name": "L6"
+				},
+				{
+					"id": 6,
+					"name": "L7"
+				},
+				{
+					"id": 7,
+					"name": "L8"
+				},
+				{
+					"id": 8,
+					"name": "L9"
+				},
+				{
+					"id": 9,
+					"name": "L10"
+				}
+			],
+			"macros": [],
+			"superkeys": []
+		}
+	]
+}
