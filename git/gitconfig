@@ -75,7 +75,12 @@
     whitespace = yellow reverse
 
 [interactive]
+    diffFilter = diff-so-fancy --patch
     singlekey = true
+
+# Third-party: diff-so-fancy
+[diff-so-fancy]
+    markEmptyLines = false
 
 # URL shortcuts
 [url "git@github.com:"]
