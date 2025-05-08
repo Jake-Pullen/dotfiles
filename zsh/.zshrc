@@ -3,7 +3,13 @@ HISTSIZE=5000
 SAVEHIST=100000
 setopt autocd extendedglob
 unsetopt beep
+
 bindkey -v
+
+
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+bindkey  "^[[3~"  delete-char
 
 # Enable colors and change prompt:
 autoload -U colors && colors
