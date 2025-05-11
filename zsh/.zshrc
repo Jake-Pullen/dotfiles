@@ -19,6 +19,7 @@ RPROMPT='%F{15}(%F{166}%D{%H:%M}%F{15})%f'
 
 export PATH=$PATH:$HOME/.local/bin
 export EDITOR=~/.local/bin/zed
+export GIT_EDITOR=nano
 
 # Fixing zsh history problems on multiple terminals
 setopt inc_append_history
@@ -35,7 +36,7 @@ alias gca='gc --amend --no-edit'
 alias gce='gc --amend'
 alias gco='git checkout'
 alias gcl='git clone --recursive'
-alias gd='git diff --output-indicator-new=" " --output-indicator-old=" "'
+alias gd='git diff'
 alias gds='gd --staged'
 alias gi='git init'
 alias gl='git log --graph --all --pretty=format:"%C(magenta)%h %C(white) %an  %ar%C(blue)  %D%n%s%n"'

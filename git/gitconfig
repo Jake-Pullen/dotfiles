@@ -10,6 +10,7 @@
     compression = 9  # trade cpu for network
     fsync = none
     whitespace = error  # threat incorrect whitespace as errors
+    editor = nano
 
 [advice]  # disable advices
     addEmptyPathspec = false
@@ -23,7 +24,6 @@
 [diff]
     context = 3  # less context in diffs
     renames = copies  # detect copies as renames in diffs
-    interHunkContext = 10  # merge near hunks in diffs
 
 [init]
     defaultBranch = main
@@ -37,10 +37,6 @@
     short = true
     showStash = true
     showUntrackedFiles = all  # show individual untracked files
-
-[pager]
-    branch = false  # no need to use pager for git branch
-    diff = diff-so-fancy | $PAGER  # diff-so-fancy as diff pager
 
 [push]
     autoSetupRemote = true  # easier to push new branches

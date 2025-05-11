@@ -37,6 +37,7 @@ package_list=(
     "firefox"
     "spotify-launcher"
     "ollama"
+    "waybar"
     )
 
 # Create a string of packages
@@ -46,4 +47,8 @@ package_string=$(IFS=' ' ; echo "${package_list[@]}")
 echo "Attempting to install packages: $package_string"
 sudo pacman -S --needed --noconfirm $package_string
 
+## UV for Python Dev
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+## Linutil by CTT
 curl -fsSL https://christitus.com/linux | sh
