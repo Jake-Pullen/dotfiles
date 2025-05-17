@@ -20,15 +20,13 @@
 
 
     "hyprland/workspaces": {
-        "disable-scroll": false,
+        "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": true,
-        "format": "{name}",
+        "format": "{name}: {icon}",
         "format-icons": {
-            "urgent": "",
             "active": "",
             "default": "",
-        "exec": "hyprctl clients -w -f"
         }
     },
  /*   "wlr/taskbar": {
@@ -145,12 +143,10 @@
     "cpu": {
         "format": "  {usage}%",
         "tooltip": true,
-        "on-click": "kitty htop &"
     },
     "memory": {
         "format": "  {}%",
-		"tooltip": true,
-		"on-click": "gnome-disks &"
+	"tooltip": true,
     },
     "temperature": {
         "interval": 10,

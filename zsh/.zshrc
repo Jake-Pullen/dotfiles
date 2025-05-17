@@ -19,7 +19,7 @@ RPROMPT='%F{15}(%F{166}%D{%H:%M}%F{15})%f'
 
 export PATH=$PATH:$HOME/.local/bin
 export EDITOR=~/.local/bin/zed
-export GIT_EDITOR=nano
+export GIT_EDITOR=nvim
 
 # Fixing zsh history problems on multiple terminals
 setopt inc_append_history

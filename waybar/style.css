@@ -8,10 +8,6 @@
 window#waybar {
     background: transparent;
     color: @teal;
-    border-radius: 7rem;
-    border-width: 2px;
-    border-style: solid;
-    border-color: @teal;
 }
 
 window#waybar.empty #window {
@@ -73,11 +69,11 @@ window#waybar.empty #window {
 
 
 #workspaces {
-  border-radius: 7rem;
+  border-radius: 1px;
   background-color: transparent;
-  /*border-width: 2px;
-  border-style: solid;
-  border-color: @teal;*/
+  /* border-width: 1px; */
+  /* border-style: solid; */
+  /* border-color: @teal; */
 }
 
 #workspaces button {
@@ -184,8 +180,8 @@ window#waybar.empty #window {
   padding: 0 10px;
   background-color: transparent;
   color: @teal;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 15px;
+  margin-right:15px;
 }
 #window:hover {
     background-color: @maroon;
