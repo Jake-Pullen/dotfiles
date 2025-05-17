@@ -38,6 +38,7 @@ package_list=(
     "spotify-launcher"
     "ollama"
     "waybar"
+    "flameshot"
     )
 
 # Create a string of packages
