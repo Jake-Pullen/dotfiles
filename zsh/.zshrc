@@ -18,7 +18,7 @@ PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magent
 RPROMPT='%F{15}(%F{166}%D{%H:%M}%F{15})%f'
 
 export PATH=$PATH:$HOME/.local/bin
-export EDITOR=~/.local/bin/zed
+export EDITOR=nvim
 export GIT_EDITOR=nvim
 
 # Fixing zsh history problems on multiple terminals
