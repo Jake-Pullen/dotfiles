@@ -39,6 +39,10 @@ package_list=(
     "ollama"
     "waybar"
     "flameshot"
+    "zsh"
+    "zsh-completions"
+    "ttf-font-awesome"
+    "nerd-fonts"
     )
 
 # Create a string of packages
@@ -53,3 +57,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 ## Linutil by CTT
 curl -fsSL https://christitus.com/linux | sh
+
+## make zsh the default shell
+chsh /usr/bin/zsh
+
