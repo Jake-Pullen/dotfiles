@@ -17,6 +17,8 @@ package_list=(
     "zsh-completions"
     "ttf-font-awesome"
     "nerd-fonts"
+    "btop"
+    "firefox"
     )
 
 # Create a string of packages
@@ -30,8 +32,51 @@ sudo pacman -S --needed --noconfirm $package_string
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 ## Linutil by CTT
-# curl -fsSL https://christitus.com/linux | sh
+curl -fsSL https://christitus.com/linux | sh
 
-## make zsh the default shell
-chsh /usr/bin/zsh
+folders_to_link=(
+	"alacritty"
+	"git"
+	"hypr"
+	"waybar"
+	"wofi"
+	"zsh"
+	)
+
+# Loop through the folder list
+for folder in "${folders_to_link[@]}"; do
+  # Construct the full path to the .config folder
+  config_path="$HOME/dotfiles/$folder"
+
+  # Construct the full path to the target folder
+  target_path="$HOME/.config/$folder"
+
+  # Check if the target folder exists
+  if [ -d "$target_path" ]; then
+    echo "Warning: Target directory '$target_path' already exists. Skipping link creation."
+  else
+    # Create a soft link
+    ln -s "$config_path" "$target_path"
+    if [ $? -eq 0 ]; then
+      echo "Successfully created soft link: $target_path -> $config_path"
+    else
+      echo "Error: Failed to create soft link: $target_path"
+    fi
+  fi
+done
+
+if [ -f "$HOME/.gitconfig" ]; then
+  echo gitconfig already linked, skipping
+else
+  ln -s $HOME/dotfiles/git/gitconfig $HOME/.gitconfig
+  echo linked gitconfig 
+fi
+
+if [ -f "/etc/zsh/zshenv" ]; then
+  echo zshenv already exists, skipping
+else
+  ln -s $HOME/dotfiles/zshenv /etc/zsh/zshenv
+fi
+
+echo Make sure you change shell with chsh 
 
