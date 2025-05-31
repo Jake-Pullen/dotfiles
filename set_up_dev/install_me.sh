@@ -36,6 +36,8 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 ## Bazecor for the Dygma Keyboard
 yay bazecor
+## ckb-next for the corsair mouse
+yay ckb-next
 
 ## Symlink the config files to the right places
 folders_to_link=(
@@ -45,6 +47,7 @@ folders_to_link=(
 	"waybar"
 	"wofi"
 	"zsh"
+	"ckb-next"
 	)
 
 # Loop through the folder list
