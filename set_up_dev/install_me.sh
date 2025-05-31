@@ -32,8 +32,12 @@ sudo pacman -S --needed --noconfirm $package_string
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 ## Linutil by CTT
-curl -fsSL https://christitus.com/linux | sh
+# curl -fsSL https://christitus.com/linux | sh
 
+## Bazecor for the Dygma Keyboard
+yay bazecor
+
+## Symlink the config files to the right places
 folders_to_link=(
 	"alacritty"
 	"git"

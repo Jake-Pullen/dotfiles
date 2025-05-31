@@ -1,5 +1,5 @@
 [user]
-	email = 88822333+Jake-Pullen@users.noreply.github.com
+	email = hello@jake-is.me
 	name = Jake Pullen
 
 [commit]
@@ -10,7 +10,7 @@
     compression = 9  # trade cpu for network
     fsync = none
     whitespace = error  # threat incorrect whitespace as errors
-    editor = nano
+    editor = nvim
 
 [advice]  # disable advices
     addEmptyPathspec = false
@@ -81,3 +81,5 @@
 # URL shortcuts
 [url "git@github.com:"]
     insteadOf = "gh:"
+[maintenance]
+	repo = /home/devin/dotfiles
