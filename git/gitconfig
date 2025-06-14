@@ -81,7 +81,7 @@
 # URL shortcuts
 [url "git@github.com:"]
     insteadOf = "gh:"
-[url "git@github.com:Jake-Pullen:"]
+[url "git@github.com:Jake-Pullen/"]
     insteadOf = "JP:"
 [maintenance]
 	repo = /home/devin/dotfiles
