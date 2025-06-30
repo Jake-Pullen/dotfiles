@@ -31,6 +31,9 @@ sudo pacman -S --needed --noconfirm $package_string
 ## UV for Python Dev
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
+## Rust, because we all love rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 ## Linutil by CTT
 # curl -fsSL https://christitus.com/linux | sh
 

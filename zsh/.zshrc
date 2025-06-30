@@ -46,3 +46,5 @@ alias gp='git push'
 alias gr='git reset'
 alias gs='git status --short'
 alias gu='git pull'
+
+fastfetch
