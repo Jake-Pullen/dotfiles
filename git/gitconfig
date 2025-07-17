@@ -1,9 +1,11 @@
 [user]
 	email = hello@jake-is.me
 	name = Jake Pullen
+	signingkey = 047E30AFD800B3E3
 
 [commit]
-    template = ~/.config/git/template
+	template = ~/.config/git/template
+	gpgsign = true
 
 [core]
     autocrlf = input  # keep newlines as in input
@@ -26,7 +28,7 @@
     renames = copies  # detect copies as renames in diffs
 
 [init]
-    defaultBranch = main
+	defaultBranch = main
 
 [log]
     abbrevCommit = true  # short commits
@@ -85,3 +87,5 @@
     insteadOf = "JP:"
 [maintenance]
 	repo = /home/devin/dotfiles
+[fetch]
+	prune = true
