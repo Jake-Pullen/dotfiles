@@ -34,6 +34,9 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ## Rust, because we all love rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+# ollama for that local llm hit
+$ curl -fsSL https://ollama.com/install.sh | sh
+
 ## Linutil by CTT
 # curl -fsSL https://christitus.com/linux | sh
 
