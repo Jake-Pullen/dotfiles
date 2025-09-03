@@ -1,7 +1,7 @@
 [user]
 	email = hello@jake-is.me
 	name = Jake Pullen
-	signingkey = 047E30AFD800B3E3
+	signingkey = 5CBC649FBEF851A6
 
 [commit]
 	template = ~/.config/git/template

@@ -30,13 +30,6 @@ setopt histignorealldups
 alias ..='cd ..'
 alias la='ls -la'
 
-# Aliases: git
-alias ga='git add'
-alias gc='git commit'
-alias gcm='git checkout main'
-alias gl='git log --graph --all --pretty=format:"%C(magenta)%h %C(white) %an  %ar%C(blue)  %D%n%s%n"'
-alias gnew='git checkout -b'  # new branch
-
-# Alias: neovim
+alias lmstudio='./AppImages/LM-Studio.AppImage'
 
 fastfetch

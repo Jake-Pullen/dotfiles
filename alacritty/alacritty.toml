@@ -9,61 +9,20 @@ import = [
 ]
 
 [window]
-title = "Alacritty"
-decorations = "none"
+title = "JP Dev Area"
+dynamic_title = true
 blur = true
 opacity = 0.9
 padding.x = 10
 padding.y = 10
 
 [window.dimensions]
-columns = 160
+columns = 150
 lines = 80
+
 
 [cursor.style]
 shape = "Beam"
-blinking = "Never"
-
-# [colors]
-# #transparent_background_colors = true
-# draw_bold_text_with_bright_colors = true
-
-# [env]
-# TERM = "xterm-256color"
-
-# [font]
-# #glyph_offset = { x = 1, y = 0 }
-# normal.family = "MesloLGS Nerd Font Mono"
-# normal.style = "Regular"
-# size = 16.0
-
-# [font.bold]
-# family = "MesloLGS Nerd Font Mono"
-# style = "Bold"
-
-# [font.italic]
-# family = "MesloLGS Nerd Font Mono"
-# style = "Italic"
-
-
-[font]
-size = 14
-
-[font.normal]
-family = "Inconsolata Nerd Font"
-style = "Regular"
-
-[font.bold]
-family = "Inconsolata Nerd Font"
-style = "Bold"
-
-[font.italic]
-family = "Inconsolata Nerd Font"
-style = "Italic"
-
-[font.bold_italic]
-family = "Inconsolata Nerd Font"
-style = "Bold Italic"
 
 [colors.primary]
 background = "#10131c"
@@ -94,3 +53,4 @@ save_to_clipboard = false
 
 [terminal.shell]
 program = "/usr/bin/zsh"
+args = ["-l"]
