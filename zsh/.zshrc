@@ -32,6 +32,6 @@ alias ..='cd ..'
 alias la='ls -la'
 
 alias wake_up='cd source/ai_web && ./run.sh & ~/AppImages/LM-Studio.AppImage &'
-alias updatepls='sudo dnf update -y && sudo flatpak update -y'
+alias updatepls='~/dotfiles/updater.sh'
 
 fastfetch
