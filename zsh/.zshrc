@@ -9,13 +9,14 @@ bindkey -v
 
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
-bindkey  "^[[3~"  delete-char
+bindkey "^[[3~"  delete-char
 
 # Enable colors and change prompt:
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 # time at right hand side
 RPROMPT='%F{15}(%F{166}%D{%H:%M}%F{15})%f'
+
 
 export PATH=$PATH:$HOME/.local/bin
 export EDITOR=nvim
@@ -30,6 +31,7 @@ setopt histignorealldups
 alias ..='cd ..'
 alias la='ls -la'
 
-alias lmstudio='./AppImages/LM-Studio.AppImage'
+alias wake_up='cd source/ai_web && ./run.sh & ~/AppImages/LM-Studio.AppImage &'
+alias updatepls='sudo dnf update -y && sudo flatpak update -y'
 
 fastfetch
