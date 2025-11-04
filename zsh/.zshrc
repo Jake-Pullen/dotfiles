@@ -33,5 +33,8 @@ alias la='ls -la'
 
 alias wake_up='cd source/ai_web && ./run.sh & ~/AppImages/LM-Studio.AppImage &'
 alias updatepls='~/dotfiles/updater.sh'
+alias mklink='ln -s "$(pwd)" ~/$(basename "$(pwd)")'
+alias merlin='(cd ~/source/merlin && uv run merlin) && cd ~'
 
+eval "$(starship init zsh)"
 fastfetch

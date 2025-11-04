@@ -54,3 +54,10 @@ save_to_clipboard = false
 [terminal.shell]
 program = "/usr/bin/zsh"
 args = ["-l"]
+
+#[font.normal]
+#family = "Noto Sans"
+#style = "Regular"
+
+#[font.emoji]
+#family = "google-noto-color-emoji-fonts"
