@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 # ------------------------------------------------------------
-# Fedora System Set Up Script
+# Ubuntu System Set Up Script
 # ------------------------------------------------------------
 
 # ============================================================
 # PACKAGE LISTING
 # ============================================================
-# List all packages we want from dnf
+# List all packages we want from apt
 package_list=(
 	"kitty"
 	"fastfetch"
@@ -43,22 +43,19 @@ shopt -s expand_aliases    # if you use aliases inside the script
 # ============================================================
 # SYSTEM UPDATE
 # ============================================================
-echo "==> Updating Fedora base packages..."
+echo "==> Updating Ubuntu base packages..."
 
-sudo dnf upgrade --refresh -y
+sudo apt update && sudo apt upgrade -y
 
 # ============================================================
 # REPOSITORY SETUP
 # ============================================================
 echo "==> Enabling RPM-Fusion repositories..."
-sudo dnf install \
-    https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
-    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm \
-    -y
+# For Ubuntu, we'll skip RPM-Fusion since it's Fedora-specific
 
-# Prep for vs-code install
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
+# Prep for vs-code install # TODO: needs testing / tewaking
+curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/microsoft-archive-keyring.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft-archive-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main" | sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
 
 # ============================================================
 # PACKAGE INSTALLATION
@@ -68,8 +65,8 @@ echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com
 package_string=$(IFS=' ' ; echo "${package_list[@]}")
 
 # Install packages listed
-echo "==> Installing dnf Packages..."
-sudo dnf install $package_string -y --skip-unavailable
+echo "==> Installing apt Packages..."
+sudo apt install $package_string -y --no-install-recommends
 
 # ============================================================
 # FLATPAK SETUP
@@ -78,7 +75,7 @@ sudo dnf install $package_string -y --skip-unavailable
 # 5. Install Flatpak (if not present) and set up Flathub
 if ! command -v flatpak &>/dev/null; then
     echo "==> Installing Flatpak..."
-    sudo dnf install flatpak -y
+    sudo apt install flatpak -y
 fi
 
 echo "==> Adding Flathub repository..."
@@ -137,7 +134,7 @@ chsh -s /bin/zsh
 # CLEANUP
 # ============================================================
 echo "==> Cleaning up package cache..."
-sudo dnf clean all
+sudo apt clean
 
 echo "===================================================="
 echo "All done! Give the system a reboot!"

@@ -11,13 +11,6 @@ bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey "^[[3~"  delete-char
 
-# Enable colors and change prompt:
-autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-# time at right hand side
-RPROMPT='%F{15}(%F{166}%D{%H:%M}%F{15})%f'
-
-
 export PATH=$PATH:$HOME/.local/bin
 export EDITOR=nvim
 export GIT_EDITOR=nvim
@@ -31,10 +24,14 @@ setopt histignorealldups
 alias ..='cd ..'
 alias la='ls -la'
 
-alias wake_up='cd source/ai_web && ./run.sh & ~/AppImages/LM-Studio.AppImage &'
-alias updatepls='~/dotfiles/updater.sh'
+alias wake_up='cd source/ai_web && ./run.sh >/dev/null 2>&1 & ~/AppImages/LM-Studio.AppImage >/dev/null 2>&1 &'
+alias kill_ai='pkill -f "open-webui" && pkill -f "LM-Studio"'
+
 alias mklink='ln -s "$(pwd)" ~/$(basename "$(pwd)")'
+
 alias merlin='(cd ~/source/merlin && uv run merlin) && cd ~'
+alias vlc_web='vlc --http-host=0.0.0.0 --http-port=6080 --http-password=banana'
+alias update_mp3='rsync -av /home/devin/music/ /run/media/devin/3761-3261'
 
 eval "$(starship init zsh)"
 fastfetch

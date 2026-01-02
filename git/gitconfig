@@ -7,6 +7,9 @@
 	template = ~/.config/git/template
 	gpgsign = true
 
+[tag]
+	forceSignAnnotated = true
+
 [core]
     autocrlf = input  # keep newlines as in input
     compression = 9  # trade cpu for network
