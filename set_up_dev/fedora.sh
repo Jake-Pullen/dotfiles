@@ -120,7 +120,7 @@ ln -s $HOME/dotfiles/.justfile $HOME/.justfile
 
 # slightly tested zshrc sym link
 sudo rm -f /etc/zshrc
-sudo ln -s /etc/zshrc $HOME/dotfiles/zsh/.zshrc
+sudo ln -s $HOME/dotfiles/zsh/.zshrc /etc/zshrc
 
 # ============================================================
 # NVIM SETUP
