@@ -97,3 +97,5 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+[safe]
+	directory = /mnt/nas/hosted_git/DnD.git

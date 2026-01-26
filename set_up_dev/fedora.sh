@@ -16,6 +16,7 @@ package_list=(
 	"steam"
 	"code"
 	"just"
+	"neovim"
 )
 
 # List all the flatpaks we want to install
@@ -23,6 +24,7 @@ flatpacks_to_install=(
 	"com.discordapp.Discord"
 	"com.spotify.Client"
 	"app.zen_browser.zen"
+	"md.obsidian.Obsidian"
 )
 
 # List all the folders we want to link from our dotfiles folder to our .config folder
