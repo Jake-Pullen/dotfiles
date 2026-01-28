@@ -17,6 +17,7 @@ package_list=(
 	"code"
 	"just"
 	"neovim"
+	"fira-code-fonts"
 )
 
 # List all the flatpaks we want to install

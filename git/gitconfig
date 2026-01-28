@@ -99,3 +99,4 @@
 	clean = git-lfs clean -- %f
 [safe]
 	directory = /mnt/nas/hosted_git/DnD.git
+	directory = /mnt/nas/hosted_git/dungeon_masters_vault.git
