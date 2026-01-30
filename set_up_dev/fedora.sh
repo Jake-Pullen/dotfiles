@@ -107,6 +107,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # Starship because command line glory
 curl -sS https://starship.rs/install.sh | sh
 
+## Tailscale for that private network.
+curl -fsSL https://tailscale.com/install.sh | sh 
+
 # ============================================================
 # SYMBOLIC LINKING
 # ============================================================
