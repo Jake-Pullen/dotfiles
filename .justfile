@@ -1,6 +1,6 @@
 # Justfile for system updates
 
-update: update-dnf update-flatpak update-uv update-rust cleanup
+update: update-dnf update-flatpak update-uv update-rust update-tailscale cleanup
     @echo "All updates completed!"
 
 update-dnf:
@@ -27,3 +27,7 @@ update-uv:
 update-rust:
     @echo "Updating Rust"
     rustup update
+
+update-tailscale:
+    @echo "Updating Tailscale"
+    sudo tailscale update --yes
