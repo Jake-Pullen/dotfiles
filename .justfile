@@ -31,3 +31,8 @@ update-rust:
 update-tailscale:
     @echo "Updating Tailscale"
     sudo tailscale update --yes
+
+sync-dnd:
+    @echo "Syncing DnD GITs"
+    (cd ~/DnD && just git-sync)
+    (cd ~/source/dungeon_masters_vault && just git-sync)
