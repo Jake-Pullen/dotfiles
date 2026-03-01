@@ -13,7 +13,7 @@ package_list=(
 	"fastfetch"
 	"zsh"
 	"btop"
-	"steam"
+	# "steam"
 	"code"
 	"just"
 	"neovim"
