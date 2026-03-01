@@ -140,6 +140,12 @@ git clone https://github.com/Jake-Pullen/kickstart.nvim.git $HOME/.config/nvim
 chsh -s /bin/zsh
 
 # ============================================================
+# ENABLE SERVICES
+# ============================================================
+sudo systemctl enable --now sshd
+
+
+# ============================================================
 # CLEANUP
 # ============================================================
 echo "==> Cleaning up package cache..."
