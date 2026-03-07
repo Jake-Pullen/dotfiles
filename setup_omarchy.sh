@@ -11,7 +11,8 @@ echo "========================================"
 
 # 1. Add packages (must be first)
 echo "[1/4] Installing packages..."
-./omarchy_start.sh
+./omarchy_package_install.sh
+
 
 # 2. Set up symbolic links
 echo ""
@@ -32,6 +33,12 @@ echo "  - Restoring SSH and GPG keys..."
 
 echo "  - Restoring Git backups..."
 ./restore_git_backup.sh
+
+echo "  - Restoring cron jobs..."
+./restore_cron_jobs.sh
+
+echo "  - Enabling services..."
+sudo systemctl enable --now cronie.service
 
 echo ""
 echo "========================================"

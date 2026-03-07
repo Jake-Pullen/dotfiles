@@ -3,6 +3,7 @@
 pacman_to_add=(
     "tree"
     "ttf-fira-code"
+    "cronie"
 )
 
 aur_to_add=(
