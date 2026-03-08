@@ -18,3 +18,8 @@ alias la='ls -la'
 
 
 fastfetch
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/jake/.lmstudio/bin"
+# End of LM Studio CLI section
+

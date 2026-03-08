@@ -24,13 +24,26 @@ restore_project() {
         exit 1
     fi
 
+    local target_dir="$REPO_SOURCE/$project_name"
+
     echo "Restoring $project_name from latest backup..."
 
-    # Create the project directory if it doesn't exist
-    mkdir -p "$REPO_SOURCE/$project_name"
+    # Check if project already exists and is up to date
+    if [ -d "$target_dir" ]; then
+        local backup_mtime=$(stat -c %Y "${project_backup_path}/backup.tar" 2>/dev/null || echo 0)
+        local repo_mtime=$(stat -c %Y "$target_dir" 2>/dev/null || echo 0)
+        
+        if [ "$repo_mtime" -ge "$backup_mtime" ]; then
+            echo "  Skipped $project_name (already up to date)"
+            return 0
+        fi
+    fi
 
-    # Extract the backup to the source directory
-    tar -xf "${project_backup_path}/backup.tar" -C "$REPO_SOURCE/$project_name"
+    # Create the project directory if it doesn't exist
+    mkdir -p "$target_dir"
+
+    # Extract the backup to the source directory (overwrite existing files)
+    tar -xf "${project_backup_path}/backup.tar" -C "$target_dir"
 
     echo "Successfully restored $project_name from backup"
 }

@@ -10,35 +10,37 @@ echo "  Omarchy Fresh Install - Starting..."
 echo "========================================"
 
 # 1. Add packages (must be first)
-echo "[1/4] Installing packages..."
-./omarchy_package_install.sh
-
+echo "Installing packages..."
+./scripts/omarchy-specific/omarchy_package_install.sh
 
 # 2. Set up symbolic links
 echo ""
-echo "[2/4] Setting up symbolic links..."
-./set_up_sym_links.sh
+echo "Setting up symbolic links..."
+./scripts/generic/set_up_sym_links.sh
 
 # 3. Mount NAS (required for restore scripts)
 echo ""
-echo "[3/4] Setting up NAS mount..."
-./set_up_nas_mount.sh
+echo "Setting up NAS mount..."
+./scripts/generic/set_up_nas_mount.sh
 
 # 4. Restore backups (requires NAS mount)
 echo ""
-echo "[4/4] Restoring SSH/GPG keys and Git data..."
+echo "Restoring SSH/GPG keys and Git data..."
 
 echo "  - Restoring SSH and GPG keys..."
-./restore_ssh_gpg.sh
+./scripts/generic/restore_ssh_gpg.sh
 
 echo "  - Restoring Git backups..."
-./restore_git_backup.sh
+./scripts/generic/restore_git_backup.sh >/dev/null 2>&1 || echo "    (Git restore skipped)"
 
 echo "  - Restoring cron jobs..."
-./restore_cron_jobs.sh
+./scripts/generic/restore_cron_jobs.sh
 
 echo "  - Enabling services..."
 sudo systemctl enable --now cronie.service
+
+echo "  - Removing unwanted stuf..."
+./scripts/omarchy-specific/remove_bloat.sh
 
 echo ""
 echo "========================================"
