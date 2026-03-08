@@ -5,6 +5,7 @@ link_to_config=(
     "git"
     "starship.toml"
     "fastfetch"
+    "hypr"
 )
 link_to_home=(
     ".bashrc"
@@ -22,7 +23,6 @@ for dir in "${directories[@]}"; do
         echo "  Created $dir"
     fi
 done
-
 
 for link in "${link_to_config[@]}"; do
     config_path="$HOME/dotfiles/$link"
@@ -43,3 +43,7 @@ for link in "${link_to_home[@]}"; do
         ln -sf "$config_path" "$target_path"
     fi
 done
+
+# Open Code Local LLM Config
+rm ~/.config/opencode/opencode.json
+cp ~/dotfiles/opencode.json ~/.config/opencode/opencode.json
