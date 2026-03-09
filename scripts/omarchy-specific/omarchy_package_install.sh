@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
-source ~/.local/share/omarchy/bin/omarchy-pkg-add
-source ~/.local/share/omarchy/bin/omarchy-pkg-aur-add
+# source ~/.local/share/omarchy/bin/omarchy-pkg-add
+# source ~/.local/share/omarchy/bin/omarchy-pkg-aur-add
 
 pacman_to_add=(
     "tree"
