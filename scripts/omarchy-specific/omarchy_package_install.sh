@@ -12,6 +12,7 @@ pacman_to_add=(
 aur_to_add=(
     "bazecor"
     "lmstudio-bin"
+    # "yubico-authenticator" # partially borked?
 )
 
 package_str=$(IFS=' ' ; echo "${pacman_to_add[@]}")
