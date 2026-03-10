@@ -7,6 +7,8 @@ pacman_to_add=(
     "tree"
     "ttf-fira-code"
     "cronie"
+    "cmake"
+    "gamemode"
 )
 
 aur_to_add=(
